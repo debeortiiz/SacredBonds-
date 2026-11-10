@@ -1,0 +1,15 @@
+title: Sacred Bonds
+description: Your love. Your faith. Your privacy.
+url: "https://Debeortiiz.github.io"
+baseurl: "/sacred-bonds-privacy"
+theme: jekyll-theme-cayman
+lang: en
+show_downloads: false
+github:
+  is_project_page: false
+  is_user_page: false
+exclude:
+  - PRIVACY_POLICY_RELEASE.md
+  - LOCAL_FEATURE_CHECKLIST.md
+  - OFFLINE_RELEASE_CHECKLIST.md
+  - STORE_ICON_ARTWORK.md
