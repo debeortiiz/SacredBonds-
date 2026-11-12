@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sacred Bonds Privacy Policy</title>
-    <meta name="description" content="Sacred Bonds privacy policy." />
+    <title>Sacred Bonds | Faith-Centered Couple App</title>
+    <meta name="description" content="Sacred Bonds helps couples grow in faith, love, and commitment through prayer, milestones, and meaningful connection." />
     <style>
       :root {
         --primary: #205C47;
+        --primary-dark: #163F32;
         --background: #FAFCF8;
         --surface: #FFFFFF;
         --surface-border: #DCE5D9;
@@ -15,120 +16,487 @@
         --accent-surface: #F8F3E6;
         --text: #183D30;
         --text-subtle: #456052;
+        --shadow: rgba(24, 61, 48, 0.08);
       }
+
       * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
-        background: var(--background);
+        background: linear-gradient(180deg, #f9fcf8 0%, #f5f7f2 100%);
         color: var(--text-subtle);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.65;
+        line-height: 1.7;
       }
-      .page {
-        max-width: 820px;
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        max-width: 1160px;
         margin: 0 auto;
-        padding: 48px 20px 64px;
+        padding: 0 20px;
       }
-      h1, h2 {
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(250, 252, 248, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--surface-border);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 0.96rem;
+      }
+
+      .hero {
+        padding: 72px 0 48px;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 18px;
+        padding: 8px 12px;
+        border: 1px solid var(--surface-border);
+        border-radius: 999px;
+        background: var(--accent-surface);
+        color: var(--primary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1, h2, h3 {
+        margin: 0 0 16px;
         color: var(--text);
         font-family: Georgia, "Times New Roman", serif;
       }
+
       h1 {
-        margin-bottom: 12px;
-        font-size: clamp(2rem, 5vw, 2.5rem);
+        font-size: clamp(2.6rem, 5vw, 4.2rem);
+        line-height: 1.08;
       }
-      h2 {
-        margin-top: 24px;
-        padding: 16px 18px;
-        background: var(--accent-surface);
+
+      .lead {
+        margin: 0 0 28px;
+        font-size: 1.08rem;
+        max-width: 620px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 12px;
         border: 1px solid var(--surface-border);
-        border-top: 2px solid var(--accent);
-        border-radius: 20px 20px 0 0;
+        font-weight: 700;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
       }
-      p {
-        margin: 0 0 14px;
+
+      .button:hover {
+        text-decoration: none;
+        transform: translateY(-1px);
       }
-      .block {
+
+      .button.primary {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: #fff;
+        box-shadow: 0 12px 22px rgba(32, 92, 71, 0.18);
+      }
+
+      .button.secondary {
         background: var(--surface);
-        border: 1px solid var(--surface-border);
-        border-top: 0;
-        border-radius: 0 0 20px 20px;
-        padding: 18px;
-      }
-      a {
         color: var(--primary);
       }
-      .meta {
-        margin: 12px 0 28px;
+
+      .mini-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 0.92rem;
         color: var(--text-subtle);
+      }
+
+      .mini-meta strong {
+        color: var(--text);
+      }
+
+      .hero-card {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 28px;
+        box-shadow: 0 20px 40px var(--shadow);
+        padding: 24px;
+      }
+
+      .app-shell {
+        background: linear-gradient(180deg, #f2f8f4 0%, #eef6f0 100%);
+        border: 1px solid var(--surface-border);
+        border-radius: 24px;
+        padding: 18px;
+      }
+
+      .device {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 22px;
+        padding: 18px;
+      }
+
+      .device-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--surface-border);
+        margin-bottom: 18px;
+      }
+
+      .signal {
+        display: flex;
+        gap: 6px;
+      }
+
+      .signal span {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--primary);
+        opacity: 0.7;
+      }
+
+      .profile {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), #8da58f);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+
+      .profile h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .tile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .tile {
+        background: var(--accent-surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 16px;
+        padding: 16px 14px;
+      }
+
+      .tile strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--text);
+      }
+
+      .section {
+        padding: 44px 0;
+      }
+
+      .section-title {
+        margin-bottom: 18px;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .feature {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 20px;
+        padding: 24px 20px;
+        box-shadow: 0 12px 28px rgba(24, 61, 48, 0.04);
+      }
+
+      .feature .icon {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--accent-surface);
+        color: var(--accent);
+        font-size: 1.2rem;
+        margin-bottom: 14px;
+      }
+
+      .feature h3 {
+        margin-bottom: 8px;
+        font-size: 1.35rem;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .stat {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: 18px;
+        padding: 20px;
+      }
+
+      .stat strong {
+        display: block;
+        color: var(--text);
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      .cta-panel {
+        background: var(--primary);
+        color: #fff;
+        border-radius: 28px;
+        padding: 32px;
+        margin-top: 42px;
+      }
+
+      .cta-panel h2 {
+        color: #fff;
+      }
+
+      .cta-panel p {
+        color: rgba(255,255,255,0.82);
+      }
+
+      footer {
+        padding: 28px 0 52px;
+        color: var(--text-subtle);
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--surface-border);
+        padding-top: 24px;
+      }
+
+      @media (max-width: 820px) {
+        .hero-inner,
+        .feature-grid,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          flex-direction: column;
+          justify-content: center;
+          gap: 12px;
+          padding: 12px 0 16px;
+        }
       }
     </style>
   </head>
   <body>
-    <main class="page">
-      <h1>Sacred Bonds — Privacy Policy</h1>
-      <p class="meta">Effective and last updated: November 10, 2026</p>
-
-      <p><strong>Publisher:</strong> CristoVieneProntoby_deborah<br />
-      <strong>Privacy contact:</strong> <a href="mailto:cristovieneprontobydeborah@gmail.com">cristovieneprontobydeborah@gmail.com</a></p>
-
-      <p>Your love. Your faith. Your privacy.</p>
-      <p>The moments you share with God and each other belong to you. This policy explains what stays on your device and the choices you have.</p>
-
-      <h2>1. What this policy covers</h2>
-      <div class="block">
-        <p>This policy covers the Sacred Bonds mobile app for couples building a faith-centered relationship. “We” refers to CristoVieneProntoby_deborah, the publisher of Sacred Bonds. The app works without an account, a developer-operated server, or a cloud connection. The app-store listing and any website hosting this policy are separate services.</p>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">Sacred Bonds</div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
       </div>
+    </header>
 
-      <h2>2. What you choose to save</h2>
-      <div class="block">
-        <p>On your device, the app saves the partner names, relationship stage, anniversary date and optional church-service weekdays you enter. It also saves prayer titles, prayer text, prayer topics and answered status; faith goals and their progress; devotional completions; saved Bible passages and date ideas; activity checkoffs and history; guided-prayer sessions; worship and reading streaks; language, theme, reading-size and onboarding preferences. Completion dates support your history and progress. Your journal may reveal personal relationships or religious beliefs, so write only what you feel comfortable storing.</p>
-      </div>
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <div class="eyebrow">Faith & love</div>
+            <h1>Your relationship, remembered with intention.</h1>
+            <p class="lead">
+              Sacred Bonds helps couples create a shared rhythm of prayer, reflection, milestones,
+              and meaningful moments—so love grows deeper with purpose.
+            </p>
+            <div class="cta-row">
+              <a class="button primary" href="mailto:cristovieneprontobydeborah@gmail.com">Contact</a>
+              <a class="button secondary" href="privacy.html">Read Privacy Policy</a>
+            </div>
+            <div class="mini-meta">
+              <span><strong>Built for:</strong> couples</span>
+              <span><strong>Focus:</strong> faith-centered connection</span>
+            </div>
+          </div>
 
-      <h2>3. How your information is used</h2>
-      <div class="block">
-        <p>The app reads this local information only to personalize your couple profile, reopen your journal, calculate your anniversary countdown, remember saved content and display your progress and chosen settings. Bible passages, devotional content and images are bundled with the app. Search, daily verse selection and progress calculations happen on your device. Changing the app language does not upload or rewrite your personal entries.</p>
-      </div>
+          <div class="hero-card" aria-label="App preview card">
+            <div class="app-shell">
+              <div class="device">
+                <div class="device-header">
+                  <div class="signal" aria-label="signal indicator">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span style="font-size: 0.8rem; color: var(--text-subtle);">9:41</span>
+                </div>
 
-      <h2>4. No collection, sale or tracking</h2>
-      <div class="block">
-        <p>The app does not send your journal, profile or activity data to us or to other people. We do not collect, sell, rent or share this local information. There are no advertising, analytics, tracking or remote AI features in the app, and it does not synchronize information between partners. We do not keep a server copy of your entries and cannot view or recover them.</p>
-      </div>
+                <div class="profile">
+                  <div class="avatar">SB</div>
+                  <div>
+                    <h3>Sacred Bonds</h3>
+                    <div style="font-size: 0.85rem; color: var(--text-subtle);">Couple journal</div>
+                  </div>
+                </div>
 
-      <h2>5. No camera, microphone or calendar</h2>
-      <div class="block">
-        <p>The app does not request or use your camera, microphone, location, contacts, calendar, photos or media library. Church weekdays and anniversaries are entered manually and do not connect to your phone calendar. Core features do not require an internet connection. Bible-source addresses on the credits page are attribution text, not automatic downloads.</p>
-      </div>
+                <div class="tile-grid">
+                  <div class="tile">
+                    <strong>Prayer</strong>
+                    <span>Daily moments of faith</span>
+                  </div>
+                  <div class="tile">
+                    <strong>Milestones</strong>
+                    <span>Anniversaries & growth</span>
+                  </div>
+                  <div class="tile">
+                    <strong>Memory</strong>
+                    <span>Your love story</span>
+                  </div>
+                  <div class="tile">
+                    <strong>Commitment</strong>
+                    <span>Intentional togetherness</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <h2>6. Local storage and device security</h2>
-      <div class="block">
-        <p>Information is kept in app-scoped local storage (AsyncStorage). The app does not add its own password lock or database encryption. Your device’s operating system controls access and device-level protection. Use a device passcode and keep your device secure; someone with access to an unlocked device may be able to read your journal. No storage method can be guaranteed completely secure.</p>
-      </div>
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">What Sacred Bonds helps you do</h2>
+          <div class="feature-grid">
+            <article class="feature">
+              <div class="icon">✦</div>
+              <h3>Track your journey</h3>
+              <p>Keep your relationship milestones, anniversaries, and highlights in one place with clarity and care.</p>
+            </article>
 
-      <h2>7. Retention, editing and deletion</h2>
-      <div class="block">
-        <p>Entries stay in local app storage until you remove them, delete all app data, or remove the app’s local storage. Edit Profile lets you change your names, relationship stage, anniversary and service days. Erase couple profile removes those details while keeping your journal and progress. Individual prayers and goals can be deleted. Delete all my app data removes the saved app-data record and resets the app to its welcome screen. This action cannot be undone, and we cannot restore your entries.</p>
-      </div>
+            <article class="feature">
+              <div class="icon">❋</div>
+              <h3>Pray together</h3>
+              <p>Capture prayer intentions, meaningful reflections, and spiritual moments that nourish your faith as a couple.</p>
+            </article>
 
-      <h2>8. Uninstalling, backups and previews</h2>
-      <div class="block">
-        <p>Deleting the mobile app normally removes its active local data, but offloading an app is not the same as deleting it. Android backup is disabled in the app configuration. iOS device backups, system transfers and any existing backups follow the operating system’s settings; uninstalling does not guarantee deletion of those copies. Manage them in your device or backup-provider settings. In a browser preview, data is stored by the browser, not by a mobile installation, and must be cleared separately. Hosting or development-preview services may handle technical connection data under their own policies. These are not app journal-upload features.</p>
-      </div>
+            <article class="feature">
+              <div class="icon">✝</div>
+              <h3>Grow with intention</h3>
+              <p>Build habits that strengthen communication, devotion, and unity—one faithful step at a time.</p>
+            </article>
+          </div>
 
-      <h2>9. Intended audience</h2>
-      <div class="block">
-        <p>Sacred Bonds is designed for adult couples, not directed to children under 13. We do not operate a registration service or collect children’s information on a server. Anyone using a shared device should avoid recording another person’s sensitive information without their permission.</p>
-      </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>Daily</strong>
+              intentional faith moments
+            </div>
+            <div class="stat">
+              <strong>Shared</strong>
+              relationship history
+            </div>
+            <div class="stat">
+              <strong>Rooted</strong>
+              in love and purpose
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <h2>10. App stores and your choices</h2>
-      <div class="block">
-        <p>Apple, Google and your device or backup provider may process store-account, download, diagnostic or backup information under their own policies and your device settings. This policy describes the app itself, not those independent services. You control the information you enter and can review, edit or delete it locally. Because we do not hold your journal or profile, there is no server account to delete or server copy for us to provide.</p>
-      </div>
-
-      <h2>11. Questions and policy changes</h2>
-      <div class="block">
-        <p>For privacy questions, contact CristoVieneProntoby_deborah at <a href="mailto:cristovieneprontobydeborah@gmail.com">cristovieneprontobydeborah@gmail.com</a>. If you email us, your email provider and ours process the message, and we use the information you send to respond to your request. Do not send private journal entries when asking a question. If the app’s privacy practices change, this policy and its date will be updated. Any future feature that sends information off your device must be disclosed before you use it.</p>
-      </div>
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel">
+            <h2>Designed for couples who want a deeper spiritual connection.</h2>
+            <p>
+              Sacred Bonds is built to help you remember your story, honor faith, and nurture a meaningful relationship through shared reflection and intention.
+            </p>
+            <div class="cta-row" style="margin-top: 18px; margin-bottom: 0;">
+              <a class="button" href="privacy.html" style="background: #fff; color: var(--primary);">View Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© 2026 Sacred Bonds</div>
+        <div>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
